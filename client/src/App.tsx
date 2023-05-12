@@ -1,9 +1,4 @@
-import {
-  AuthBindings,
-  Authenticated,
-  GitHubBanner,
-  Refine,
-} from "@refinedev/core";
+import { AuthBindings, Authenticated, Refine } from "@refinedev/core";
 import { RefineKbar, RefineKbarProvider } from "@refinedev/kbar";
 
 import {
@@ -97,7 +92,7 @@ function App() {
         redirectTo: "/login",
       };
     },
-    onError: async (error) => {
+    onError: async error => {
       console.error(error);
       return { error };
     },
@@ -133,7 +128,6 @@ function App() {
 
   return (
     <BrowserRouter>
-      <GitHubBanner />
       <RefineKbarProvider>
         <ColorModeContextProvider>
           <CssBaseline />
