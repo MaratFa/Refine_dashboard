@@ -13,6 +13,8 @@ import {
   ThemedLayoutV2,
 } from "@refinedev/mui";
 
+///
+
 import { CssBaseline, GlobalStyles } from "@mui/material";
 import routerBindings, {
   CatchAllNavigate,
@@ -97,7 +99,7 @@ function App() {
         redirectTo: "/login",
       };
     },
-    onError: async (error) => {
+    onError: async error => {
       console.error(error);
       return { error };
     },
