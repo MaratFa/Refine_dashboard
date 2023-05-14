@@ -1,4 +1,9 @@
-import { AuthBindings, Authenticated, Refine } from "@refinedev/core";
+import {
+  AuthBindings,
+  Authenticated,
+  GitHubBanner,
+  Refine,
+} from "@refinedev/core";
 import { RefineKbar, RefineKbarProvider } from "@refinedev/kbar";
 
 import {
@@ -32,7 +37,7 @@ import {
 import { Login } from "pages/login";
 import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
 import { parseJwt } from "utils/parse-jwt";
-import { Header } from "./components/layout/header";
+import { Header } from "./components/header";
 import { ColorModeContextProvider } from "./contexts/color-mode";
 
 const axiosInstance = axios.create();
@@ -128,6 +133,7 @@ function App() {
 
   return (
     <BrowserRouter>
+      <GitHubBanner />
       <RefineKbarProvider>
         <ColorModeContextProvider>
           <CssBaseline />
