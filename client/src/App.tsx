@@ -1,9 +1,4 @@
-import {
-  AuthBindings,
-  Authenticated,
-  GitHubBanner,
-  Refine,
-} from "@refinedev/core";
+import { AuthBindings, Authenticated, Refine } from "@refinedev/core";
 import { RefineKbar, RefineKbarProvider } from "@refinedev/kbar";
 
 import {
@@ -12,8 +7,6 @@ import {
   RefineSnackbarProvider,
   ThemedLayoutV2,
 } from "@refinedev/mui";
-
-///
 
 import { CssBaseline, GlobalStyles } from "@mui/material";
 import routerBindings, {
@@ -135,7 +128,6 @@ function App() {
 
   return (
     <BrowserRouter>
-      <GitHubBanner />
       <RefineKbarProvider>
         <ColorModeContextProvider>
           <CssBaseline />
