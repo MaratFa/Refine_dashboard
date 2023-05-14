@@ -1,10 +1,10 @@
-import { useLogin } from "@refinedev/core"
-import { useEffect, useRef } from "react"
+import { useLogin } from "@refinedev/core";
+import { useEffect, useRef } from "react";
+import { yariga } from "../assets";
 
-import { Box, Container, Typography } from "@mui/material"
-import { ThemedTitleV2 } from "@refinedev/mui"
+import { Box, Container } from "@mui/material";
 
-import { CredentialResponse } from "../interfaces/google"
+import { CredentialResponse } from "../interfaces/google";
 
 export const Login: React.FC = () => {
   const { mutate: login } = useLogin<CredentialResponse>();
@@ -41,40 +41,33 @@ export const Login: React.FC = () => {
   };
 
   return (
-    <Container
-      style={{
-        height: "100vh",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Box
-        display="flex"
-        gap="36px"
-        justifyContent="center"
-        flexDirection="column"
+    <Box component="div" sx={{ backgroundColor: "#FCFCFC" }}>
+      <Container
+        component="main"
+        maxWidth="xs"
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          height: "100vh",
+        }}
       >
-        <ThemedTitleV2
-          collapsed={false}
-          wrapperStyles={{
-            fontSize: "22px",
+        <Box
+          sx={{
+            display: "flex",
             justifyContent: "center",
+            flexDirection: "column",
+            alignItems: "center",
           }}
-        />
-
-        <GoogleButton />
-
-        <Typography align="center" color={"text.secondary"} fontSize="12px">
-          Powered by
-          <img
-            style={{ padding: "0 5px" }}
-            alt="Google"
-            src="https://refine.ams3.cdn.digitaloceanspaces.com/superplate-auth-icons%2Fgoogle.svg"
-          />
-          Google
-        </Typography>
-      </Box>
-    </Container>
+        >
+          <div>
+            <img src={yariga} alt="Yariga Logo" />
+          </div>
+          <Box mt={4}>
+            <GoogleButton />
+          </Box>
+        </Box>
+      </Container>
+    </Box>
   );
 };
