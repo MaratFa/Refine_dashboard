@@ -1,12 +1,4 @@
-import { DarkModeOutlined, LightModeOutlined } from "@mui/icons-material";
-import {
-  AppBar,
-  Avatar,
-  IconButton,
-  Stack,
-  Toolbar,
-  Typography,
-} from "@mui/material";
+import { AppBar, Avatar, Stack, Toolbar, Typography } from "@mui/material";
 import { useGetIdentity } from "@refinedev/core";
 import { HamburgerMenu, RefineThemedLayoutV2HeaderProps } from "@refinedev/mui";
 import React, { useContext } from "react";
@@ -26,7 +18,12 @@ export const Header: React.FC<RefineThemedLayoutV2HeaderProps> = ({
   const { data: user } = useGetIdentity<IUser>();
 
   return (
-    <AppBar position={isSticky ? "sticky" : "relative"}>
+    <AppBar
+      color="default"
+      position="sticky"
+      elevation={0}
+      sx={{ background: "#fcfcf" }}
+    >
       <Toolbar>
         <Stack
           direction="row"
@@ -41,14 +38,14 @@ export const Header: React.FC<RefineThemedLayoutV2HeaderProps> = ({
             justifyContent="flex-end"
             alignItems="center"
           >
-            <IconButton
+            {/* <IconButton
               color="inherit"
               onClick={() => {
                 setMode();
               }}
             >
               {mode === "dark" ? <LightModeOutlined /> : <DarkModeOutlined />}
-            </IconButton>
+            </IconButton> */}
 
             {(user?.avatar || user?.name) && (
               <Stack
